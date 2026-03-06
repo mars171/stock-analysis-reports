@@ -1,0 +1,83 @@
+{
+  "project_id": "stock-analysis-reports",
+  "title": "股票分析报告汇总",
+  "status": "completed",
+  "created_at": "2026-03-06T09:23:00Z",
+  "completed_at": "2026-03-06T09:50:00Z",
+  "created_by": "manager",
+  "participants": [
+    "admin",
+    "stock-alpha",
+    "stock-beta",
+    "data-harvest"
+  ],
+  "projects": [
+    {
+      "project_id": "工业富联分析_601138",
+      "stock": "工业富联",
+      "code": "601138",
+      "status": "completed",
+      "first_analysis_score": 50.6,
+      "first_analysis_recommendation": "观望",
+      "second_analysis_score": 47.6,
+      "second_analysis_recommendation": "强烈建议观望",
+      "skills_installed": 20,
+      "pdf_report": true,
+      "created_at": "2026-03-05T15:36:00Z",
+      "completed_at": "2026-03-06T00:08:00Z"
+    },
+    {
+      "project_id": "千禾味业分析_603027",
+      "stock": "千禾味业",
+      "code": "603027",
+      "status": "completed",
+      "analysis_score": 54.6,
+      "analysis_recommendation": "谨慎乐观，可考虑小仓位介入",
+      "pdf_report": true,
+      "created_at": "2026-03-06T03:38:00Z",
+      "completed_at": "2026-03-06T03:51:00Z"
+    },
+    {
+      "project_id": "10万投资计划_2026",
+      "title": "10万元人民币1年期投资计划",
+      "amount": 100000,
+      "duration": "1年",
+      "market": "A股主板",
+      "status": "completed",
+      "recommended_plan": "方案 2（稳健型）",
+      "expected_return": "7.0% ± 2.0%",
+      "max_drawdown": "-8% ± 2%",
+      "pdf_report": true,
+      "created_at": "2026-03-06T07:45:00Z",
+      "completed_at": "2026-03-06T08:20:00Z"
+    }
+  ],
+  "github_repo": {
+    "name": "stock-analysis-reports",
+    "full_name": "mars171/stock-analysis-reports",
+    "url": "https://github.com/mars171/stock-analysis-reports",
+    "clone_url": "https://github.com/mars171/stock-analysis-reports.git",
+    "private": false,
+    "created_at": "2026-03-06T09:50:00Z",
+    "status": "created"
+  },
+  "folder_structure": {
+    "stock-analysis-reports/": {
+      "description": "项目根目录",
+      "subdirectories": [
+        "工业富联分析_601138/",
+        "千禾味业分析_603027/",
+        "10万投资计划_2026/",
+        "团队创建/"
+      ]
+    }
+  },
+  "git_commit": {
+    "id": "2472910",
+    "message": "Initial commit: Stock analysis reports",
+    "author": "mars171",
+    "files_changed": 12,
+    "insertions": 3204,
+    "timestamp": "2026-03-06T09:50:00Z"
+  }
+}
