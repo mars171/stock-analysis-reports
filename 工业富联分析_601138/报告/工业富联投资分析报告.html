@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工业富联（601138）投资分析报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #1a1a1a;
+            font-size: 28px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #007bff;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid #007bff;
+        }
+
+        h3 {
+            color: #0056b3;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        .info-bar {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .info-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .info-value {
+            color: #212529;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e9ecef;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .danger {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .score-box {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .score-medium {
+            background: #fff3cd;
+            color: #856404;
+            border: 2px solid #ffc107;
+        }
+
+        .score-weak {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #dc3545;
+        }
+
+        .recommendation {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .recommendation-wait {
+            background: #fff3cd;
+            color: #856404;
+            border: 3px solid #ffc107;
+        }
+
+        .recommendation-strong-wait {
+            background: #f8d7da;
+            color: #721c24;
+            border: 3px solid #dc3545;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin: 8px 0;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 3px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #dee2e6;
+            text-align: center;
+            color: #6c757d;
+            font-size: 12px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>工业富联（601138）投资分析报告</h1>
+
+        <div class="info-bar">
+            <div class="info-item">
+                <div class="info-label">报告日期</div>
+                <div class="info-value">2026-03-06</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">股票代码</div>
+                <div class="info-value">601138</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">股票名称</div>
+                <div class="info-value">工业富联</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">分析周期</div>
+                <div class="info-value">2026-03-05 15:36 - 2026-03-06 00:08 UTC</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">报告版本</div>
+                <div class="info-value">v2（使用增强技能）</div>
+            </div>
+        </div>
+
+        <h2>最终投资建议</h2>
+
+        <div class="recommendation recommendation-strong-wait">
+            ⏸️ 强烈建议观望，暂不入手
+        </div>
+
+        <h3>关键理由</h3>
+        <ol>
+            <li><strong>技术信号冲突</strong>：MACD金叉（看多）但均线空头排列（看空），无法形成明确方向</li>
+            <li><strong>Mixed Choppy市场环境</strong>：93%置信度建议减少交易，技术分析信号经常失效</li>
+            <li><strong>风险评分偏高</strong>：综合风险评分72/100，VaR 20天：-11.58%</li>
+            <li><strong>交易智慧警示</strong>：高信心决策经常错误，低频或零交易策略更安全</li>
+            <li><strong>策略回测表现不佳</strong>：简单均线交叉策略夏普比率-0.48</li>
+        </ol>
+
+        <h2>分析师评分对比</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>分析师</th>
+                    <th>评分</th>
+                    <th>建议</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>stock-alpha（技术面）</td>
+                    <td>47/100</td>
+                    <td>强烈建议观望</td>
+                </tr>
+                <tr>
+                    <td>stock-beta（量化+情绪面）</td>
+                    <td>48.25/100</td>
+                    <td>观望，不入手</td>
+                </tr>
+                <tr>
+                    <td><strong>综合评分</strong></td>
+                    <td><strong>47.6/100</strong></td>
+                    <td><strong>强烈建议观望</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>关键价位</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>价位类型</th>
+                    <th>价格</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>当前价格</td>
+                    <td>55.10 元</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>支撑位</strong></td>
+                    <td><strong>53.76 元</strong></td>
+                    <td>近期低点，强支撑</td>
+                </tr>
+                <tr>
+                    <td><strong>短期压力</strong></td>
+                    <td><strong>55.58 元</strong></td>
+                    <td>MA10，关键阻力 ⬅️</td>
+                </tr>
+                <tr>
+                    <td>中期压力</td>
+                    <td>57.95 元</td>
+                    <td>前期高点</td>
+                </tr>
+                <tr>
+                    <td>长期压力</td>
+                    <td>59.79 元</td>
+                    <td>MA60</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>适合介入时机（满足任一）</h2>
+
+        <ol>
+            <li><strong>趋势明确</strong>：MA5 > MA10 > MA20（短期中期均多头排列），或 RSI突破60进入强势区</li>
+            <li><strong>信号一致</strong>：MACD DIF > 0（进入多头区域），MACD柱持续放大（金叉确认），均线、RSI、MACD信号一致</li>
+            <li><strong>市场环境改善</strong>：脱离 Mixed Choppy 状态，进入明确上升或下降趋势</li>
+            <li><strong>成交量配合</strong>：成交量 > 200万手，换手率 > 1.5%</li>
+        </ol>
+
+        <h2>止损条件（满足任一）</h2>
+
+        <div class="danger">
+            <ol>
+                <li>❌ 跌破53.76（近期低点）</li>
+                <li>❌ 成交量持续萎缩 < 100万手</li>
+                <li>❌ RSI跌破40（转为偏空）</li>
+                <li>❌ 无法突破MA10，继续震荡下行</li>
+            </ol>
+        </div>
+
+        <h2>第二次分析核心发现</h2>
+
+        <h3>stock-alpha 技术面分析</h3>
+        
+        <div class="score-box score-medium">
+            评分：47/100（中等偏弱）
+        </div>
+
+        <h4>市场状态识别（market-regimes）</h4>
+        <div class="warning">
+            <strong>当前市场环境：Mixed Choppy（混合震荡）</strong><br><br>
+            <strong>市场状态建议（93%置信度）</strong>：
+            <ul>
+                <li>✅ <strong>减少或停止交易</strong></li>
+                <li>交易频率与表现反向相关（95%成功率）</li>
+            </ul>
+        </div>
+
+        <h4>风险管理（risk-management）</h4>
+        <p><strong>综合风险评分：72/100（中高风险）</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>风险因素</th>
+                    <th>评分</th>
+                    <th>等级</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>技术信号冲突</td>
+                    <td>85/100</td>
+                    <td><span style="color: red;">🔴 高风险</span></td>
+                </tr>
+                <tr>
+                    <td>Mixed Choppy市场环境</td>
+                    <td>75/100</td>
+                    <td><span style="color: red;">🔴 高风险</span></td>
+                </tr>
+                <tr>
+                    <td>趋势中期不明</td>
+                    <td>70/100</td>
+                    <td><span style="color: orange;">🟠 中风险</span></td>
+                </tr>
+                <tr>
+                    <td>52周位置相对安全</td>
+                    <td>50/100</td>
+                    <td><span style="color: green;">🟢 低风险</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>stock-beta 量化分析</h3>
+        
+        <div class="score-box score-medium">
+            评分：48.25/100（中性偏空）
+        </div>
+
+        <h4>策略回测（backtesting-frameworks）</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>指标</th>
+                    <th>值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>总收益率</td>
+                    <td>-0.18%</td>
+                </tr>
+                <tr>
+                    <td>夏普比率</td>
+                    <td><span style="color: red;">-0.48</span></td>
+                </tr>
+                <tr>
+                    <td>最大回撤</td>
+                    <td>-5.26%</td>
+                </tr>
+                <tr>
+                    <td>胜率</td>
+                    <td>40%</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>结论：</strong>简单策略在当前震荡市表现不佳</p>
+
+        <h4>风险分析（risk-metrics-calculation）</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>VaR（95%置信度）</th>
+                    <th>值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1天</td>
+                    <td>-2.45%</td>
+                </tr>
+                <tr>
+                    <td>5天</td>
+                    <td>-5.62%</td>
+                </tr>
+                <tr>
+                    <td>10天</td>
+                    <td>-8.04%</td>
+                </tr>
+                <tr>
+                    <td><strong>20天</strong></td>
+                    <td><strong>-11.58%</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>两次分析对比</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>维度</th>
+                    <th>第一次分析</th>
+                    <th>第二次分析</th>
+                    <th>变化</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>stock-alpha 评分</td>
+                    <td>49/100</td>
+                    <td>47/100</td>
+                    <td>-2.0</td>
+                </tr>
+                <tr>
+                    <td>stock-beta 评分</td>
+                    <td>52.25/100</td>
+                    <td>48.25/100</td>
+                    <td>-4.0</td>
+                </tr>
+                <tr>
+                    <td><strong>综合评分</strong></td>
+                    <td><strong>50.6/100</strong></td>
+                    <td><strong>47.6/100</strong></td>
+                    <td><strong>-3.0</strong></td>
+                </tr>
+                <tr>
+                    <td>建议</td>
+                    <td>观望</td>
+                    <td>强烈建议观望</td>
+                    <td>更谨慎</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>风险提示</h2>
+
+        <h3>市场风险</h3>
+        <ul>
+            <li>市场环境不确定性：当前Mixed Choppy状态，技术分析信号可靠性降低</li>
+            <li>行业分化严重：同行业公司表现差异巨大（+43.59% vs -8.11%）</li>
+            <li>外部因素：宏观经济、政策变化可能影响股价</li>
+        </ul>
+
+        <h3>技术风险</h3>
+        <ul>
+            <li>技术信号冲突：MACD看多 vs 均线看空</li>
+            <li>趋势不明：中期上升，短期回调</li>
+            <li>支撑位未验证：53.76支撑需进一步验证</li>
+        </ul>
+
+        <h3>流动性风险</h3>
+        <ul>
+            <li>换手率偏低：0.69%，低于行业平均（2.34%）</li>
+            <li>成交量温和：136.2万手，追涨意愿不强</li>
+        </ul>
+
+        <div class="success">
+            <h2>技能使用总结</h2>
+            <p><strong>第二次分析使用的新技能：</strong></p>
+            <ul>
+                <li><strong>market-regimes</strong>（407 installs）- 市场状态识别与策略</li>
+                <li><strong>risk-management</strong>（786 installs）- 风险管理规则库（40条规则）</li>
+                <li><strong>trading-wisdom</strong>（443 installs）- 交易智慧模式库（206个模式）</li>
+                <li><strong>backtesting-frameworks</strong>（2.9K installs）- 回测框架</li>
+                <li><strong>risk-metrics-calculation</strong>（2.6K installs）- 风险度量计算</li>
+                <li><strong>sentiment-analysis-trading</strong>（94 installs）- 情绪分析交易</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>报告生成时间：</strong> 2026-03-06 00:08 UTC</p>
+            <p><strong>报告版本：</strong> v2</p>
+            <p><strong>生成工具：</strong> OpenClaw Manager Agent</p>
+            <hr>
+            <p><em>本报告仅供参考，不构成投资建议。股票投资有风险，入市需谨慎。</em></p>
+        </div>
+    </div>
+</body>
+</html>

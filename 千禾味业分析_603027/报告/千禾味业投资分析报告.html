@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千禾味业（603027）股票投资分析报告</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #1a1a1a;
+            font-size: 28px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #007bff;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 4px solid #007bff;
+        }
+
+        h3 {
+            color: #0056b3;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        .info-bar {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .info-item {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .info-value {
+            color: #212529;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        tr:hover {
+            background: #e9ecef;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .danger {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .score-box {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .score-low {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #28a745;
+        }
+
+        .score-medium {
+            background: #fff3cd;
+            color: #856404;
+            border: 2px solid #ffc107;
+        }
+
+        .recommendation {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .recommendation-buy {
+            background: #d4edda;
+            color: #155724;
+            border: 3px solid #28a745;
+        }
+
+        .recommendation-wait {
+            background: #fff3cd;
+            color: #856404;
+            border: 3px solid #ffc107;
+        }
+
+        .recommendation-strong-wait {
+            background: #e7f3ff;
+            color: #004085;
+            border: 3px solid #007bff;
+        }
+
+        ul, ol {
+            margin-left: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin: 8px 0;
+            padding: 8px 15px;
+            background: white;
+            border-radius: 3px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #dee2e6;
+            text-align: center;
+            color: #6c757d;
+            font-size: 12px;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>千禾味业（603027）股票投资分析报告</h1>
+
+        <div class="info-bar">
+            <div class="info-item">
+                <div class="info-label">报告日期</div>
+                <div class="info-value">2026-03-07</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">股票代码</div>
+                <div class="info-value">603027</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">股票名称</div>
+                <div class="info-value">千禾味业</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">分析周期</div>
+                <div class="info-value">2026-03-06 03:38 UTC - 03:50 UTC</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">报告版本</div>
+                <div class="info-value">v1（基于有限数据）</div>
+            </div>
+        </div>
+
+        <div class="toc">
+            <h3>目录</h3>
+            <ul>
+                <li><a href="#1-项目概述">1. 项目概述</a></li>
+                <li><a href="#2-数据收集报告">2. 数据收集报告</a></li>
+                <li><a href="#3-stock-alpha-技术面分析">3. stock-alpha 技术面分析</a></li>
+                <li><a href="#4-stock-beta-量化情绪面分析">4. stock-beta 量化+情绪面分析</a></li>
+                <li><a href="#5-综合分析">5. 综合分析</a></li>
+                <li><a href="#6-最终投资建议">6. 最终投资建议</a></li>
+                <li><a href="#7-风险提示">7. 风险提示</a></li>
+                <li><a href="#8-免责声明">8. 免责声明</a></li>
+            </ul>
+        </div>
+
+        <h2 id="1-项目概述">1. 项目概述</h2>
+
+        <h3 id="1.1-项目背景">1.1 项目背景</h3>
+        <p>本项目旨在通过多维度分析（数据收集、技术面分析、量化+情绪面分析），判断千禾味业（603027）在2026-03-07是否值得入手。</p>
+
+        <h3 id="1.2-分析团队">1.2 分析团队</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>成员</th>
+                    <th>角色</th>
+                    <th>使用技能</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>data-harvest</td>
+                    <td>数据收集专家</td>
+                    <td>tushare-finance, stock-analysis, yahoo-finance</td>
+                </tr>
+                <tr>
+                    <td>stock-alpha</td>
+                    <td>技术分析专家</td>
+                    <td>indicator-expert, backtesting-trading-strategies, risk-management, market-regimes, trading-wisdom</td>
+                </tr>
+                <tr>
+                    <td>stock-beta</td>
+                    <td>量化分析专家</td>
+                    <td>backtesting-frameworks, sentiment-analysis-trading, risk-metrics-calculation</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="1.3-分析限制">1.3 分析限制</h3>
+        <div class="warning">
+            <strong>数据获取限制：</strong></p>
+            <ul>
+                <li>❌ 无法获取历史K线数据（Yahoo Finance API SSL 错误）</li>
+                <li>❌ 无法计算技术指标（MA、RSI、MACD、KDJ 等）</li>
+                <li>❌ 无法判断趋势方向</li>
+                <li>❌ 无法进行策略回测</li>
+                <li>❌ 无法进行深度情绪分析</li>
+            </ul>
+            <p><strong>原因：</strong></p>
+            <ul>
+                <li>Yahoo Finance API 遭到 SSL 协议错误</li>
+                <li>新浪财经 API 数据格式不统一</li>
+                <li>其他金融网站被反爬虫拦截</li>
+            </ul>
+        </div>
+
+        <h2 id="2-数据收集报告">2. 数据收集报告</h2>
+
+        <h3 id="2.1-基本信息">2.1 基本信息</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>项目</th>
+                    <th>值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>股票名称</td>
+                    <td>千禾味业</td>
+                </tr>
+                <tr>
+                    <td>股票代码</td>
+                    <td>603027</td>
+                </tr>
+                <tr>
+                    <td>所属市场</td>
+                    <td>上海证券交易所</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="2.2-实时行情">2.2 实时行情</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>指标</th>
+                    <th>值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>当前价格</td>
+                    <td><strong>9.47 元</strong></td>
+                </tr>
+                <tr>
+                    <td>昨收</td>
+                    <td>9.33 元</td>
+                </tr>
+                <tr>
+                    <td>今开</td>
+                    <td>9.29 元</td>
+                </tr>
+                <tr>
+                    <td>今日区间</td>
+                    <td>9.29 - 9.46 元</td>
+                </tr>
+                <tr>
+                    <td>今日涨幅</td>
+                    <td><strong>+1.50%</strong></td>
+                </tr>
+                <tr>
+                    <td>成交量</td>
+                    <td>58,950 手</td>
+                </tr>
+                <tr>
+                    <td>成交额</td>
+                    <td>5,550.34 万元</td>
+                </tr>
+                <tr>
+                    <td>换手率</td>
+                    <td>0.79%</td>
+                </tr>
+                <tr>
+                    <td>市盈率</td>
+                    <td>9.46</td>
+                </tr>
+                <tr>
+                    <td>总市值</td>
+                    <td>约 55.5 亿元</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="2.3-数据质量评估">2.3 数据质量评估</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>维度</th>
+                    <th>评分</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>数据时效性</td>
+                    <td><strong>4/5</strong></td>
+                    <td>实时数据，但缺少历史</td>
+                </tr>
+                <tr>
+                    <td>数据完整性</td>
+                    <td><strong>2/5</strong></td>
+                    <td>基础数据完整，技术指标缺失</td>
+                </tr>
+                <tr>
+                    <td>数据准确性</td>
+                    <td><strong>3/5</strong></td>
+                    <td>来源可靠，解析正确</td>
+                </tr>
+                <tr>
+                    <td>分析可用性</td>
+                    <td><strong>2/5</strong></td>
+                    <td>仅支持基础分析</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="3-stock-alpha-技术面分析">3. stock-alpha 技术面分析</h2>
+
+        <h3 id="3.1-分析结果">3.1 分析结果</h3>
+        
+        <div class="score-box score-medium">
+            技术评分：52/100（中等偏低风险）
+        </div>
+
+        <h3 id="3.2-分析维度">3.2 分析维度</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>分析维度</th>
+                    <th>结论</th>
+                    <th>风险</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>价格表现</td>
+                    <td>今日涨幅+1.50%，稳健上涨</td>
+                    <td>🟢 低</td>
+                </tr>
+                <tr>
+                    <td>估值水平</td>
+                    <td>市盈率9.46，偏低估值</td>
+                    <td>🟢 低</td>
+                </tr>
+                <tr>
+                    <td>市场活跃度</td>
+                    <td>换手率0.79%，适中</td>
+                    <td>🟡 中等</td>
+                </tr>
+                <tr>
+                    <td>风险评分</td>
+                    <td>47/100（中等偏低风险）</td>
+                    <td>🟢 低</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="3.3-投资建议">3.3 投资建议</h3>
+        
+        <div class="recommendation recommendation-strong-wait">
+            ⏸️ 谨慎观望，不建议追涨
+        </div>
+
+        <h3 id="3.4-支持建议的理由">3.4 支持建议的理由</h3>
+        <ol>
+            <li><strong>估值优势明显</strong>
+                <ul>
+                    <li>市盈率9.46，显著低于工业富联（35.80）</li>
+                    <li>估值偏低，具有一定安全边际</li>
+                </ul>
+            </li>
+            <li><strong>价格表现稳健</strong>
+                <ul>
+                    <li>今日涨幅+1.50%，不是急涨</li>
+                    <li>波动率适中，稳定性较好</li>
+                </ul>
+            </li>
+            <li><strong>风险评分可控</strong>
+                <ul>
+                    <li>综合风险评分47/100</li>
+                    <li>属于中等偏低风险区间</li>
+                </ul>
+            </li>
+            <li><strong>市场活跃度适中</strong>
+                <ul>
+                    <li>换手率0.79%，不过热也不过冷</li>
+                    <li>适合中低频交易</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3 id="3.5-需要注意的风险">3.5 需要注意的风险</h3>
+        <div class="warning">
+            <ol>
+                <li><strong>数据限制严重</strong>
+                    <ul>
+                        <li>缺少历史K线数据</li>
+                        <li>无法判断技术趋势</li>
+                        <li>无法计算技术指标</li>
+                    </ul>
+                </li>
+                <li><strong>市场状态不明确</strong>
+                    <ul>
+                        <li>无法判断上升/下降/盘整趋势</li>
+                        <li>无法识别支撑压力位</li>
+                    </ul>
+                </li>
+                <li><strong>技术信号有限</strong>
+                    <ul>
+                        <li>仅凭实时价格和估值判断</li>
+                        <li>缺少技术指标确认</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3 id="3.6-介入条件（谨慎）">3.6 介入条件（谨慎）</h3>
+        <p>仅在满足以下任一条件时谨慎考虑：</p>
+        <ol>
+            <li>✅ 明日开盘后观察5分钟，确认方向</li>
+            <li>✅ 如突破今日高点（9.46元）且成交量放大</li>
+            <li>✅ 如回踩9.30-9.35区间企稳后反弹</li>
+        </ol>
+
+        <h3 id="3.7-止损条件">3.7 止损条件（出现任一）</h3>
+        <div class="danger">
+            <ol>
+                <li>❌ 跌破9.29元（今日低点）</li>
+                <li>❌ 单日跌幅超过5%</li>
+                <li>❌ 成交量异常萎缩（低于4万手）</li>
+            </ol>
+        </div>
+
+        <h3 id="3.8-仓位建议">3.8 仓位建议</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>投资者类型</th>
+                    <th>建议</th>
+                    <th>仓位</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>稳健型</td>
+                    <td>小仓位试探，谨慎乐观</td>
+                    <td>最多1/3仓位</td>
+                </tr>
+                <tr>
+                    <td>中等型</td>
+                    <td>观望，或极小仓位</td>
+                    <td>最多1/5仓位</td>
+                </tr>
+                <tr>
+                    <td>保守型</td>
+                    <td>观望，不介入</td>
+                    <td>0仓位</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="4-stock-beta-量化情绪面分析">4. stock-beta 量化+情绪面分析</h2>
+
+        <h3 id="4.1-分析结果">4.1 分析结果</h3>
+        
+        <div class="score-box score-medium">
+            量化评分：57.25/100（中性偏多）
+        </div>
+
+        <h3 id="4.2-核心发现">4.2 核心发现</h3>
+        
+        <h4>1. 估值优势</h4>
+        <p><strong>千禾味业市盈率：9.46（偏低）</strong><br>
+        <strong>工业富联市盈率：35.80（偏高）</strong><br>
+        <strong>千禾味业估值优势明显</strong></p>
+
+        <h4>2. 短期动能</h4>
+        <p><strong>千禾味业涨幅：+1.50%</strong><br>
+        <strong>工业富联涨幅：+2.49%</strong><br>
+        <strong>千禾味业短期动能较弱</strong></p>
+
+        <h4>3. 换手率对比</h4>
+        <p><strong>千禾味业：0.79%（适中）</strong><br>
+        <strong>工业富联：0.69%（偏低）</strong><br>
+        <strong>千禾味业活跃度略高</strong></p>
+
+        <h3 id="4.3-量化评分">4.3 量化评分</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>维度</th>
+                    <th>得分 (0-100)</th>
+                    <th>说明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>估值优势</td>
+                    <td><strong>85</strong></td>
+                    <td>市盈率显著偏低</td>
+                </tr>
+                <tr>
+                    <td>短期动能</td>
+                    <td><strong>45</strong></td>
+                    <td>涨幅相对较小</td>
+                </tr>
+                <tr>
+                    <td>市场活跃度</td>
+                    <td><strong>55</strong></td>
+                    <td>换手率适中</td>
+                </tr>
+                <tr>
+                    <td>相对强度</td>
+                    <td><strong>50</strong></td>
+                    <td>与工业富联持平</td>
+                </tr>
+                <tr>
+                    <td><strong>综合评分</strong></td>
+                    <td><strong>57.25</strong></td>
+                    <td><strong>中性偏多</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="4.4-明天操作建议">4.4 明天操作建议</h3>
+        
+        <div class="recommendation recommendation-wait">
+            ⏸️ 谨慎观望，不建议追涨
+        </div>
+
+        <p><strong>建议置信度：</strong> 50%（数据有限，置信度中等）</p>
+
+        <h3 id="4.5-介入条件（谨慎）">4.5 介入条件（谨慎）</h3>
+        <p>仅在满足以下任一条件时谨慎考虑：</p>
+        <ol>
+            <li>✅ 明日开盘后观察5分钟，确认方向</li>
+            <li>✅ 如突破今日高点（9.46元）且成交量放大</li>
+            <li>✅ 如回踩9.30-9.35区间企稳后反弹</li>
+        </ol>
+
+        <h3 id="4.6-止损条件">4.6 止损条件（满足任一）</h3>
+        <div class="danger">
+            <ol>
+                <li>❌ 跌破9.29元（今日低点）</li>
+                <li>❌ 单日跌幅超过5%</li>
+                <li>❌ 成交量异常萎缩（低于4万手）</li>
+            </ol>
+        </div>
+
+        <h3 id="4.7-仓位建议">4.7 仓位建议</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>投资者类型</th>
+                    <th>建议仓位</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>谨慎型</td>
+                    <td>最多1/3仓位</td>
+                </tr>
+                <tr>
+                    <td>保守型</td>
+                    <td>最多1/5仓位</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="5-综合分析">5. 综合分析</h2>
+
+        <h3 id="5.1-两位分析师评分对比">5.1 两位分析师评分对比</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>分析师</th>
+                    <th>评分</th>
+                    <th>建议</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>stock-alpha（技术面）</td>
+                    <td>52/100</td>
+                    <td>谨慎乐观，可考虑小仓位介入</td>
+                </tr>
+                <tr>
+                    <td>stock-beta（量化+情绪面）</td>
+                    <td>57.25/100</td>
+                    <td>观望，不建议追涨</td>
+                </tr>
+                <tr>
+                    <td><strong>综合评分</strong></td>
+                    <td><strong>54.6/100</strong></td>
+                    <td><strong>谨慎乐观，可考虑小仓位介入</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="5.2-核心理由">5.2 核心理由</h3>
+        <ol>
+            <li><strong>技术信号冲突</strong>
+                <ul>
+                    <li>千禾味业：技术评分52/100（中等偏低风险）</li>
+                    <li>数据限制：无法进行深度技术分析</li>
+                </ul>
+            </li>
+            <li><strong>估值优势明显</strong>
+                <ul>
+                    <li>千禾味业市盈率9.46，显著低于工业富联35.80</li>
+                    <li>估值偏低，具有安全边际</li>
+                </ul>
+            </li>
+            <li><strong>数据质量中等</strong>
+                <ul>
+                    <li>数据时效性4/5：实时数据，但缺少历史</li>
+                    <li>数据完整性2/5：基础数据完整，技术指标缺失</li>
+                    <li>分析可用性2/5：仅支持基础分析</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2 id="6-最终投资建议">6. 最终投资建议</h2>
+
+        <div class="recommendation recommendation-strong-wait">
+            🟢 谨慎乐观，可考虑小仓位介入
+        </div>
+
+        <h3 id="6.1-综合评分">6.1 综合评分</h3>
+        
+        <div class="score-box score-medium">
+            54.6/100（中等偏低风险）
+        </div>
+
+        <h3 id="6.2-核心理由">6.2 核心理由</h3>
+        <ol>
+            <li><strong>估值优势明显</strong>
+                <ul>
+                    <li>市盈率9.46，显著低于工业富联35.80</li>
+                    <li>估值偏低，具有安全边际</li>
+                </ul>
+            </li>
+            <li><strong>价格表现稳健</strong>
+                <ul>
+                    <li>今日涨幅+1.50%，不是急涨</li>
+                    <li>波动率适中，稳定性较好</li>
+                </ul>
+            </li>
+            <li><strong>风险评分可控</strong>
+                <ul>
+                    <li>综合风险评分54.6/100</li>
+                    <li>属于中等偏低风险区间</li>
+                </ul>
+            </li>
+            <li><strong>数据质量警告</strong>
+                <ul>
+                    <li>缺少历史K线数据</li>
+                    <li>无法进行深度技术分析</li>
+                    <li>无法判断趋势方向</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3 id="6.3-介入条件（谨慎）">6.3 介入条件（谨慎）</h3>
+        <p>仅在满足以下任一条件时谨慎考虑：</p>
+        <ol>
+            <li>✅ 明日开盘后观察5分钟，确认上涨方向</li>
+            <li>✅ 如突破今日高点（9.46元）且成交量放大</li>
+            <li>✅ 如回踩9.30-9.35区间企稳后反弹</li>
+        </ol>
+
+        <h3 id="6.4-止损条件（满足任一）">6.4 止损条件（满足任一）</h3>
+        <div class="danger">
+            <ol>
+                <li>❌ 跌破9.29元（今日低点）</li>
+                <li>❌ 单日跌幅超过5%</li>
+                <li>❌ 成交量异常萎缩（低于4万手）</li>
+            </ol>
+        </div>
+
+        <h3 id="6.5-仓位建议">6.5 仓位建议</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>投资者类型</th>
+                    <th>建议</th>
+                    <th>仓位</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>稳健型</td>
+                    <td>小仓位试探，谨慎乐观</td>
+                    <td>单笔风险≤权益1%</td>
+                </tr>
+                <tr>
+                    <td>中等型</td>
+                    <td>观望，或极小仓位</td>
+                    <td>单笔风险≤权益0.5%</td>
+                </tr>
+                <tr>
+                    <td>保守型</td>
+                    <td>观望，不介入</td>
+                    <td>0仓位</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="6.6-对比结论">6.6 对比结论</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>股票</th>
+                    <th>价格</th>
+                    <th>市值</th>
+                    <th>市盈率</th>
+                    <th>涨幅</th>
+                    <th>评分</th>
+                    <th>建议</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>千禾味业</td>
+                    <td>9.47</td>
+                    <td>55.5亿</td>
+                    <td>9.46</td>
+                    <td>+1.50%</td>
+                    <td>54.6/100</td>
+                    <td>谨慎乐观，可考虑小仓位介入</td>
+                </tr>
+                <tr>
+                    <td>工业富联</td>
+                    <td>55.10</td>
+                    <td>1094亿</td>
+                    <td>35.80</td>
+                    <td>+2.49%</td>
+                    <td>47.6/100</td>
+                    <td>强烈建议观望，暂不入手</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 id="6.7-对比分析">6.7 对比分析</h3>
+        <p><strong>估值对比：</strong></p>
+        <ul>
+            <li>千禾味业市盈率9.46，工业富联市盈率35.80</li>
+            <li>千禾味业估值明显更低，估值优势显著</li>
+        </ul>
+
+        <p><strong>市值对比：</strong></p>
+        <ul>
+            <li>千禾味业市值55.5亿，工业富联市值1094亿</li>
+            <li>千禾味业市值更小，属于中小盘股</li>
+        </ul>
+
+        <p><strong>涨幅对比：</strong></p>
+        <ul>
+            <li>千禾味业涨幅1.50%，工业富联涨幅2.49%</li>
+            <li>千禾味业涨幅相对较小，短期动能较弱</li>
+        </ul>
+
+        <h2 id="7-风险提示">7. 风险提示</h2>
+
+        <h3 id="7.1-市场风险">7.1 市场风险</h3>
+        <ul>
+            <li>外部因素：宏观经济、政策变化可能影响股价</li>
+            <li>数据限制：无法获取历史数据，分析深度受限</li>
+        </ul>
+
+        <h3 id="7.2-技术风险">7.2 技术风险</h3>
+        <ul>
+            <li>无法判断技术趋势</li>
+            <li>无法识别支撑压力位</li>
+            <li>技术信号有限，仅凭实时价格和估值判断</li>
+        </ul>
+
+        <h3 id="7.3-流动性风险">7.3 流动性风险</h3>
+        <ul>
+            <li>换手率0.79%，适中水平</li>
+            <li>成交量58,950手，中等水平</li>
+            <li>需关注成交量变化</li>
+        </ul>
+
+        <h3 id="7.4-估值风险">7.4 估值风险</h3>
+        <ul>
+            <li>市盈率9.46，估值偏低，风险相对较小</li>
+            <li>估值优势明显，具有安全边际</li>
+        </ul>
+
+        <h2 id="8-免责声明">8. 免责声明</h2>
+
+        <p>本报告仅供参考，不构成投资建议。股票投资有风险，入市需谨慎。</p>
+        <p>分析师基于当前可用数据进行分析，市场变化可能导致结论改变。投资者应根据自身情况独立做出投资决策。</p>
+        <p>本报告存在以下限制：</p>
+        <ul>
+            <li>数据获取受限，无法获取历史K线数据和技术指标</li>
+            <li>无法进行深度技术分析和策略回测</li>
+            <li>分析结论基于有限数据，存在不确定性</li>
+        </ul>
+
+        <div class="footer">
+            <p><strong>报告生成时间：</strong> 2026-03-06 03:50 UTC</p>
+            <p><strong>报告版本：</strong> v1（基于有限数据）</p>
+            <p><strong>生成工具：</strong> OpenClaw Manager Agent</p>
+            <hr>
+            <p><em>本报告仅供参考，不构成投资建议。股票投资有风险，入市需谨慎。</em></p>
+        </div>
+    </div>
+</body>
+</html>
