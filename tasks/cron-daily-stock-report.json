@@ -1,0 +1,14 @@
+{
+  "name": "每日单只股票报告生成",
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 10 * * *",
+    "tz": "UTC"
+  },
+  "payload": {
+    "kind": "systemEvent",
+    "text": "📊 任务触发：每日单只股票报告生成\n\n请按照以下流程执行：\n1. Data-Harvest 收集所有监控股票数据\n2. Stock-Alpha 进行技术面分析\n3. Stock-Beta 进行量化+情绪面分析\n4. Manager 汇总分析结果并生成报告\n\n监控股票：\n- 601138 工业富联\n- 603027 千禾味业\n- 300418 昆仑万维\n- 002594 京东集团\n- 000100 TCL科技\n- 600018 上港集团\n\n报告存储路径：\n- 最新：reports/stocks/{code}/latest/\n- 历史：reports/stocks/{code}/history/{YYYYMMDD}/"
+  },
+  "sessionTarget": "main",
+  "enabled": true
+}
