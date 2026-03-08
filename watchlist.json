@@ -1,0 +1,69 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-03-08T11:04:00Z",
+  "stocks": [
+    {
+      "code": "601138",
+      "name": "工业富联",
+      "market": "SH",
+      "status": "monitoring",
+      "priority": "high",
+      "tags": ["科技", "制造业"]
+    },
+    {
+      "code": "603027",
+      "name": "千禾味业",
+      "market": "SH",
+      "status": "monitoring",
+      "priority": "medium",
+      "tags": ["消费", "食品"]
+    },
+    {
+      "code": "300418",
+      "name": "昆仑万维",
+      "market": "SZ",
+      "status": "monitoring",
+      "priority": "high",
+      "tags": ["科技", "AI", "互联网"]
+    },
+    {
+      "code": "002594",
+      "name": "京东集团",
+      "market": "SZ",
+      "status": "monitoring",
+      "priority": "high",
+      "tags": ["电商", "科技"]
+    },
+    {
+      "code": "000100",
+      "name": "TCL科技",
+      "market": "SZ",
+      "status": "monitoring",
+      "priority": "medium",
+      "tags": ["电子", "显示"]
+    },
+    {
+      "code": "600018",
+      "name": "上港集团",
+      "market": "SH",
+      "status": "monitoring",
+      "priority": "low",
+      "tags": ["交通", "物流"]
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "by_status": {
+      "monitoring": 6
+    },
+    "by_priority": {
+      "high": 3,
+      "medium": 2,
+      "low": 1
+    },
+    "by_market": {
+      "SH": 3,
+      "SZ": 3
+    }
+  }
+}

@@ -44,6 +44,32 @@ const reportsData = [
   }
 ];
 
+// 每日汇总报告数据（模拟数据）
+const dailyReportsData = [
+  {
+    date: '2026-03-06',
+    title: '2026-03-06 每日汇总报告',
+    summary: '监控股票数量：6只，高评分股票：2只，中评分股票：3只，低评分股票：1只',
+    stats: {
+      total_stocks: 6,
+      high_score: 2,
+      medium_score: 3,
+      low_score: 1
+    }
+  },
+  {
+    date: '2026-03-05',
+    title: '2026-03-05 每日汇总报告',
+    summary: '监控股票数量：6只，高评分股票：1只，中评分股票：3只，低评分股票：2只',
+    stats: {
+      total_stocks: 6,
+      high_score: 1,
+      medium_score: 3,
+      low_score: 2
+    }
+  }
+];
+
 // 页面加载完成后执行
 document.addEventListener('DOMContentLoaded', function() {
   console.log('页面加载完成');
@@ -54,10 +80,23 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="sr-only">Loading...</span>
     </div>
   `;
+  document.getElementById('watchlistContent').innerHTML = `
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  `;
+  document.getElementById('dailyList').innerHTML = `
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  `;
   
-  // 模拟延迟（1秒）后显示报告列表
+  // 模拟延迟（1秒）后显示数据
   setTimeout(function() {
+    displayWatchlist();
     displayReports(reportsData);
+    displayDailyReports(dailyReportsData);
+    updateLastUpdateTime();
   }, 1000);
 });
 
@@ -70,6 +109,212 @@ function searchReports() {
   );
   
   displayReports(filteredReports);
+}
+
+// 加载并显示股票监控列表
+async function loadWatchlist() {
+  try {
+    const response = await fetch('watchlist.json');
+    const data = await response.json();
+    displayWatchlist(data);
+  } catch (error) {
+    console.error('Error loading watchlist:', error);
+    document.getElementById('watchlistContent').innerHTML = `
+      <div class="alert alert-danger">
+        <strong>加载失败！</strong> 无法加载股票监控列表。
+      </div>
+    `;
+  }
+}
+
+// 显示股票监控列表
+function displayWatchlist(data) {
+  const watchlistContentElement = document.getElementById('watchlistContent');
+  
+  // 如果没有传入数据，使用默认数据
+  const watchlistData = data || {
+    stocks: [
+      {
+        code: '601138',
+        name: '工业富联',
+        market: 'SH',
+        status: 'monitoring',
+        priority: 'high',
+        tags: ['科技', '制造业']
+      },
+      {
+        code: '603027',
+        name: '千禾味业',
+        market: 'SH',
+        status: 'monitoring',
+        priority: 'medium',
+        tags: ['消费', '食品']
+      },
+      {
+        code: '300418',
+        name: '昆仑万维',
+        market: 'SZ',
+        status: 'monitoring',
+        priority: 'high',
+        tags: ['科技', 'AI', '互联网']
+      },
+      {
+        code: '002594',
+        name: '京东集团',
+        market: 'SZ',
+        status: 'monitoring',
+        priority: 'high',
+        tags: ['电商', '科技']
+      },
+      {
+        code: '000100',
+        name: 'TCL科技',
+        market: 'SZ',
+        status: 'monitoring',
+        priority: 'medium',
+        tags: ['电子', '显示']
+      },
+      {
+        code: '600018',
+        name: '上港集团',
+        market: 'SH',
+        status: 'monitoring',
+        priority: 'low',
+        tags: ['交通', '物流']
+      }
+    ],
+    summary: {
+      total: 6
+    }
+  };
+  
+  // 更新监控数量徽章
+  const watchlistCountElement = document.getElementById('watchlistCount');
+  if (watchlistCountElement) {
+    watchlistCountElement.textContent = watchlistData.summary?.total || watchlistData.stocks.length;
+  }
+  
+  if (watchlistData.stocks.length === 0) {
+    watchlistContentElement.innerHTML = `
+      <div class="empty-state">
+        <i class="fas fa-eye-slash fa-3x empty-state-icon"></i>
+        <p class="empty-state-text">暂无监控股票</p>
+      </div>
+    `;
+    return;
+  }
+  
+  let html = '<div class="card-grid">';
+  
+  watchlistData.stocks.forEach(stock => {
+    const priorityClass = stock.priority === 'high' ? 'priority-high' :
+                          stock.priority === 'medium' ? 'priority-medium' : 'priority-low';
+    const priorityText = stock.priority === 'high' ? '高优先级' :
+                         stock.priority === 'medium' ? '中优先级' : '低优先级';
+    const marketClass = stock.market === 'SH' ? 'market-sh' : 'market-sz';
+    const marketText = stock.market === 'SH' ? '上交所' : '深交所';
+    
+    let tagsHtml = '';
+    if (stock.tags && stock.tags.length > 0) {
+      tagsHtml = '<div class="stock-tags">';
+      stock.tags.forEach(tag => {
+        tagsHtml += `<span class="stock-tag tag-badge">${tag}</span>`;
+      });
+      tagsHtml += '</div>';
+    }
+    
+    html += `
+      <div class="card watchlist-card mb-3">
+        <div class="card-body">
+          <div class="stock-header">
+            <div>
+              <div class="stock-code">${stock.code}</div>
+              <div class="stock-name">${stock.name}</div>
+            </div>
+            <div>
+              <span class="market-badge ${marketClass}">${marketText}</span>
+            </div>
+          </div>
+          <div class="mt-2">
+            <span class="priority-badge ${priorityClass}">${priorityText}</span>
+            <span class="status-badge status-monitoring">监控中</span>
+          </div>
+          ${tagsHtml}
+        </div>
+      </div>
+    `;
+  });
+  
+  html += '</div>';
+  
+  watchlistContentElement.innerHTML = html;
+}
+
+// 显示每日汇总报告
+function displayDailyReports(data) {
+  const dailyListElement = document.getElementById('dailyList');
+  
+  if (!data || data.length === 0) {
+    dailyListElement.innerHTML = `
+      <div class="empty-state">
+        <i class="fas fa-calendar-times fa-3x empty-state-icon"></i>
+        <p class="empty-state-text">暂无每日汇总报告</p>
+      </div>
+    `;
+    return;
+  }
+  
+  let html = '';
+  
+  data.forEach(report => {
+    html += `
+      <div class="card daily-report-card mb-3">
+        <div class="card-body">
+          <div class="daily-report-header">
+            <div class="daily-report-date">${report.date}</div>
+            <span class="badge bg-info">汇总报告</span>
+          </div>
+          <div class="daily-report-summary">${report.summary}</div>
+          <div class="daily-report-stats">
+            <div class="daily-report-stat">
+              <div class="daily-report-stat-value">${report.stats.total_stocks}</div>
+              <div class="daily-report-stat-label">监控股票</div>
+            </div>
+            <div class="daily-report-stat">
+              <div class="daily-report-stat-value">${report.stats.high_score}</div>
+              <div class="daily-report-stat-label">高评分</div>
+            </div>
+            <div class="daily-report-stat">
+              <div class="daily-report-stat-value">${report.stats.medium_score}</div>
+              <div class="daily-report-stat-label">中评分</div>
+            </div>
+            <div class="daily-report-stat">
+              <div class="daily-report-stat-value">${report.stats.low_score}</div>
+              <div class="daily-report-stat-label">低评分</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  
+  dailyListElement.innerHTML = html;
+}
+
+// 更新最后更新时间
+function updateLastUpdateTime() {
+  const lastUpdateElement = document.getElementById('lastUpdate');
+  if (lastUpdateElement) {
+    const now = new Date();
+    lastUpdateElement.textContent = now.toLocaleString('zh-CN', {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    });
+  }
 }
 
 // 显示报告列表
@@ -246,10 +491,19 @@ document.querySelectorAll('.nav-link').forEach(link => {
     this.classList.add('active');
     
     // 处理导航
-    if (this.getAttribute('href') === '#reports') {
+    if (this.getAttribute('href') === '#watchlist') {
+      // 滚动到监控列表
+      document.getElementById('watchlist').scrollIntoView({ behavior: 'smooth' });
+    } else if (this.getAttribute('href') === '#reports') {
+      // 滚动到报告列表
+      document.getElementById('reports').scrollIntoView({ behavior: 'smooth' });
       backToReports();
+    } else if (this.getAttribute('href') === '#daily') {
+      // 滚动到每日汇总
+      document.getElementById('daily').scrollIntoView({ behavior: 'smooth' });
     } else if (this.getAttribute('href') === '#about') {
-      // 显示关于页面（待实现）
+      // 滚动到关于页面
+      document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
